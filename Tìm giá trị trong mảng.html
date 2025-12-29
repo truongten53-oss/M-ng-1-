@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Tìm giá trị trong mảng</title>
+</head>
+<body>
+
+<h3>Tìm giá trị trong mảng</h3>
+
+<script>
+    let arr = [10, 20, 30, 40, 50];
+
+    let value = prompt("Nhập giá trị cần tìm:");
+
+    let found = false;
+
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] == value) {
+            document.write("Tìm thấy " + value + " tại vị trí: " + i);
+            found = true;
+            break;
+        }
+    }
+
+    if (!found) {
+        document.write("Không tìm thấy phần tử " + value);
+    }
+</script>
+
+</body>
+</html>
