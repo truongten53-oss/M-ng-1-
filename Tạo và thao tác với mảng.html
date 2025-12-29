@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Tạo và thao tác với mảng </title>
+</head>
+<body>
+<h2>Sample Screen : </h2>
+<input type="text" id="txtValue"/>
+<input type="button" id="Add" value="Add" onclick="add_element_to_array();"/>
+<input type="button" id="Display" value="Display" onclick="display_array();"/>
+<div id="result"></div>
+<script>
+    let arr = []; /* Khai báo mang rỗng dùng để lưu giá trị ngươ nhập */
+    let index = 0; /* Biết vị trí đang thêm phần tử vị trí đâuf tiên là 0*/
+    function add_element_to_array() { /* Hàm chạy khi bấm nút add*/
+        let value = document.getElementById("txtValue").value; /* Lấy giá trị người dùng nhập từ ô input (txtValue)*/
+        if (value === "") { /* Nếu chưa nhập giá trị thì báo */
+            alert("Vui lòng nhập giá trị ")
+            return;
+        }
+        arr[index] = value;
+        index++;
+        document.getElementById("txtValue").value=""; /* Xóa nội dung ô input để chuẩn bị cho lần nhập tiếp */
+        }
+    function display_array() { /* Hàm hiển thị mảng */
+        let text = "";
+        for (let i = 0 ; i < arr.length; i++) {
+            text += "Element " + i + " = " + arr[i] + "<br>";
+        }
+        document.getElementById("result").innerHTML = text;
+    }
+</script>
+</body>
+</html>
